@@ -450,6 +450,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) CreateClient(ctx context.Context, in *MsgCreateClient, opts ...grpc.CallOption) (*MsgCreateClientResponse, error) {
 	out := new(MsgCreateClientResponse)
+	fmt.Println("**********************Create CLient **************************");
 	err := c.cc.Invoke(ctx, "/ibc.core.client.v1.Msg/CreateClient", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -459,6 +460,7 @@ func (c *msgClient) CreateClient(ctx context.Context, in *MsgCreateClient, opts 
 
 func (c *msgClient) UpdateClient(ctx context.Context, in *MsgUpdateClient, opts ...grpc.CallOption) (*MsgUpdateClientResponse, error) {
 	out := new(MsgUpdateClientResponse)
+	fmt.Println("********************** Update CLient **************************");
 	err := c.cc.Invoke(ctx, "/ibc.core.client.v1.Msg/UpdateClient", in, out, opts...)
 	if err != nil {
 		return nil, err
