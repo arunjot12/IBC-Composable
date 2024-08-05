@@ -521,6 +521,7 @@ func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
 
 func _Msg_CreateClient_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MsgCreateClient)
+	fmt.Println("********************** Update CLient **************************");
 	if err := dec(in); err != nil {
 		return nil, err
 	}
